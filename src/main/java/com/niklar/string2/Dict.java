@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.LongAdder;
 public class Dict {
 
     private static final LongAdder dictAdder = new LongAdder();
-    final static BiMap<String, Integer> dict = Maps.synchronizedBiMap(HashBiMap.create());
+    private final static BiMap<String, Integer> dict = Maps.synchronizedBiMap(HashBiMap.create());
 
     enum WORD_FORM {ALL_LOWERCASE, FIRST_UPPER, OTHER}
 
@@ -32,7 +32,8 @@ public class Dict {
     public static String map(final int[] arr) {
         return Ints.asList(arr).stream()
                 .map(Dict::getWordForId)
-                .reduce("", (s1, s2) -> s1 + " " + s2);
+                .reduce((s1, s2) -> s1 + " " + s2)
+                .get();
     }
 
     private static int getIdForWord(final String word) {

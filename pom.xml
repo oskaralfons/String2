@@ -18,7 +18,7 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
-
+        <!--testig-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -30,6 +30,12 @@
             <artifactId>fest-assert</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <version>1.7</version>
+        </dependency>
+
 
     </dependencies>
 
